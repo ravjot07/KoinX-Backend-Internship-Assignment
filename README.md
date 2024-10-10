@@ -96,7 +96,8 @@ This project is a backend server built for KoinX Backend Internship Assignment. 
 -   **Example**:
     
     ```
-    curl http://localhost:5000/stats?coin=bitcoin
+http://localhost:5000/api/stats?coin=bitcoin
+
     ```
     
 -   **Response**:
@@ -125,7 +126,8 @@ This project is a backend server built for KoinX Backend Internship Assignment. 
 -   **Example**:
     
     ```
-    curl http://localhost:5000/deviation?coin=bitcoin
+    http://localhost:5000/api/deviation?coin=bitcoin
+
     ```
     
 -   **Response**:

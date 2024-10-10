@@ -20,9 +20,8 @@ const fetchCryptoData = async () => {
         change24h: crypto.price_change_percentage_24h,
       });
 
-
       const newEntry = new Crypto({
-        coinId: crypto.id, 
+        coinId: crypto.id,
         price: crypto.current_price,
         marketCap: crypto.market_cap,
         change24h: crypto.price_change_percentage_24h,
