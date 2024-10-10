@@ -10,7 +10,7 @@ connectDB();
 
 const app = express();
 
-schedule('* * * * *', () => {
+schedule('0 */2 * * *', () => {
   console.log('Running scheduled job: Fetching crypto data...');
   fetchCryptoData();
 });
