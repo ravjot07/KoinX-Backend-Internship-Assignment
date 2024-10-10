@@ -73,7 +73,7 @@ This project is a backend server built for KoinX Backend Internship Assignment. 
 1.  Start the server:
     
     ```
-    node src/index.js
+    node index.js
     ```
     
 2.  The server will run on **port 5000** by default.
@@ -96,9 +96,10 @@ This project is a backend server built for KoinX Backend Internship Assignment. 
 -   **Example**:
     
     ```
-http://localhost:5000/api/stats?coin=bitcoin
+    http://localhost:5000/api/stats?coin=bitcoin
 
     ```
+
     
 -   **Response**:
     
@@ -127,7 +128,6 @@ http://localhost:5000/api/stats?coin=bitcoin
     
     ```
     http://localhost:5000/api/deviation?coin=bitcoin
-
     ```
     
 -   **Response**:
