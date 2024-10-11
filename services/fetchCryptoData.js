@@ -27,7 +27,6 @@ const fetchCryptoData = async () => {
         change24h: crypto.price_change_percentage_24h,
       });
       await newEntry.save();
-      console.log(`Saved data for ${crypto.id} successfully.`);
     }
   } catch (error) {
     console.error('Error fetching data from CoinGecko:', error.message);

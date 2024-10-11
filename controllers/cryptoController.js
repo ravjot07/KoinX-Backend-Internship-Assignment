@@ -8,13 +8,10 @@ export const getStats = async (req, res) => {
   }
 
   const sanitizedCoin = coin.trim().toLowerCase();
-  console.log(`Query received for /stats for coin: ${sanitizedCoin}`);
 
   try {
     const latestData = await Crypto.findOne({ coinId: sanitizedCoin }).sort({ timestamp: -1 });
     
-    
-    console.log(`Fetched data from DB for /stats:`, latestData);
 
     if (!latestData) {
       return res.status(404).json({ error: `No data found for the coin: ${sanitizedCoin}` });
@@ -26,7 +23,6 @@ export const getStats = async (req, res) => {
       '24hChange': latestData.change24h,
     });
   } catch (error) {
-    console.error('Error fetching data:', error.message);
     res.status(500).send('Server error while fetching crypto stats');
   }
 };
@@ -40,13 +36,9 @@ export const getDeviation = async (req, res) => {
   }
 
   const sanitizedCoin = coin.trim().toLowerCase();
-  console.log(`Query received for /deviation for coin: ${sanitizedCoin}`);
 
   try {
     const records = await Crypto.find({ coinId: sanitizedCoin }).sort({ timestamp: -1 }).limit(100);
-    
-    
-    // console.log(`Fetched records from DB for /deviation:`, records);
 
     if (records.length === 0) {
       return res.status(404).json({ error: `No data found for the coin: ${sanitizedCoin}` });
@@ -59,7 +51,6 @@ export const getDeviation = async (req, res) => {
 
     res.json({ deviation: parseFloat(standardDeviation.toFixed(2)) });
   } catch (error) {
-    console.error('Error calculating standard deviation:', error.message);
     res.status(500).send('Server error while calculating standard deviation');
   }
 };
